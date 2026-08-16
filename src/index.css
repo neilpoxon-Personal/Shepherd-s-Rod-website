@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-serif: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-gold-muted: #E3B341;
+  --color-gold-bright: #FFD86E;
+  --color-bg-dark: #020815;
+  --color-bg-card: #06122b;
+  --color-border-dark: #122240;
+}
+
+/* Base custom resets */
+html {
+  background-color: var(--color-bg-dark);
+  color: #F8F8F8;
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Decorative background dot-pattern overlay */
+.dot-grid-overlay {
+  background-image: radial-gradient(#F8F8F8 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Custom Scrollbar for executive styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: #2A2A2A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-muted);
+}
+
+/* Molten Gold Glow Classes */
+.gold-glow-text {
+  background: linear-gradient(135deg, #FFD86E 0%, #E3B341 50%, #997825 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px rgba(227, 179, 65, 0.15);
+}
+
+.gold-glow-border {
+  position: relative;
+}
+.gold-glow-border::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(to right, rgba(227, 179, 65, 0.1), rgba(255, 216, 110, 0.3), rgba(227, 179, 65, 0.05));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Selection */
+::selection {
+  background: rgba(227, 179, 65, 0.25);
+  color: #FFF;
+}
