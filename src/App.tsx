@@ -8,7 +8,6 @@ import Navigation from "./components/Navigation";
 import OdooEcosystem from "./components/OdooEcosystem";
 import OurProcess from "./components/OurProcess";
 import WhyShepherdsRod from "./components/WhyShepherdsRod";
-import OdooAIConsultant from "./components/OdooAIConsultant";
 import ContactForm from "./components/ContactForm";
 import LearningPartnership from "./components/LearningPartnership";
 import mountainHeroBg from "./assets/images/mountain_hero_bg_1786043451589.jpg";
@@ -21,22 +20,6 @@ import {
 } from "lucide-react";
 
 export default function App() {
-  useEffect(() => {
-    if ("scrollRestoration" in window.history) {
-      window.history.scrollRestoration = "manual";
-    }
-
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "instant",
-    } as ScrollToOptions);
-
-    requestAnimationFrame(() => {
-      window.scrollTo(0, 0);
-    });
-  }, []);
-
   // Services details
   const services = [
     {
@@ -439,27 +422,8 @@ export default function App() {
           </div>
         </div>
       </section>
-
-      {/* 9. Odoo AI Strategist / Assistant Section */}
-      <section className="py-24 border-t border-border-dark bg-[#020815] relative overflow-hidden" id="ai-advisor">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto space-y-4 mb-20">
-            <span className="font-mono text-[10px] text-gold-muted uppercase tracking-[0.25em] font-semibold block">Intelligent Consulting Node</span>
-            <h2 className="font-sans font-light text-3xl lg:text-4xl text-gray-100 tracking-tight">
-              Consult with our <span className="italic font-serif text-[#E3B341]">AI Odoo</span> Strategist
-            </h2>
-            <p className="text-sm text-gray-400 leading-relaxed">
-              Explore complex Odoo architecture plans, run direct cost savings formulas, or analyze your process bottlenecks in real-time with the Shepherd Odoo Advisor.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <OdooAIConsultant />
-          </div>
-        </div>
-      </section>
-
-      {/* 10. Insights & Resources */}
+   
+      {/* 9. Insights & Resources */}
       <section className="py-24 border-t border-border-dark bg-[#030d22] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-16 gap-4">
@@ -567,8 +531,7 @@ export default function App() {
               <li><button onClick={() => document.getElementById("ecosystem")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-gold-muted cursor-pointer transition-colors">Odoo Ecosystem</button></li>
               <li><button onClick={() => document.getElementById("process")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-gold-muted cursor-pointer transition-colors">Our Process</button></li>
               <li><button onClick={() => document.getElementById("case-studies")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-gold-muted cursor-pointer transition-colors">Case Studies</button></li>
-              <li><button onClick={() => document.getElementById("ai-advisor")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-gold-muted cursor-pointer transition-colors">AI Strategist</button></li>
-            </ul>
+             </ul>
           </div>
 
           {/* Column 4: Contact */}
