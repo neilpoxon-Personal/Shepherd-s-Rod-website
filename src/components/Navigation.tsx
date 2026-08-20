@@ -27,7 +27,6 @@ export default function Navigation() {
     { label: "Ecosystem", targetId: "ecosystem" },
     { label: "Our Process", targetId: "process" },
     { label: "Case Studies", targetId: "case-studies" },
-    { label: "AI Advisor", targetId: "ai-advisor" },
   ];
 
   return (
