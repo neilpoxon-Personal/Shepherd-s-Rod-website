@@ -5,7 +5,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/Shepherd-s-Rod-website/',
+    base: '/',
 
     plugins: [react(), tailwindcss()],
 
