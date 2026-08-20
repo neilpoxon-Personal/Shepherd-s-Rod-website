@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from "react";
+import { useEffect } from "react";
 import Navigation from "./components/Navigation";
 import OdooEcosystem from "./components/OdooEcosystem";
 import OurProcess from "./components/OurProcess";
@@ -13,14 +13,30 @@ import ContactForm from "./components/ContactForm";
 import LearningPartnership from "./components/LearningPartnership";
 import mountainHeroBg from "./assets/images/mountain_hero_bg_1786043451589.jpg";
 
-import { 
-  ArrowRight, ShieldCheck, Zap, Activity, Cpu, Code2, 
-  Settings, Users, Milestone, Library, BookOpen, 
-  Layers, Hammer, Truck, Heart, Scale, Building2, Store, Briefcase,
-  Award, GraduationCap, BadgeCheck, CheckCircle2
+import {
+  ArrowRight, ShieldCheck, Zap, Activity, Cpu,
+  Settings, Users, Milestone,
+  Layers, Hammer, Truck, Heart, Scale, Store, Briefcase,
+  Award, GraduationCap, BadgeCheck
 } from "lucide-react";
 
 export default function App() {
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    } as ScrollToOptions);
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
+  }, []);
+
   // Services details
   const services = [
     {
